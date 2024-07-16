@@ -3,15 +3,9 @@
 <ng-template #noItems> There are no wishes to display ! </ng-template>
 
 <ng-template #showItems>
-  <div *ngFor="let item of wishes">
-    <div>
-        <input
-        type="checkbox"
-        [checked]="item.isCompleted"
-        (click)="toggleItem(item)">
-
-        {{ item.wishText }}
-    </div>
-  </div>
-  
+  <wish-list-item
+    *ngFor="let wish of wishes"
+    [wishText]="wish.wishText"
+    [(wishComplete)]="wish.isCompleted"
+  ></wish-list-item>
 </ng-template>
