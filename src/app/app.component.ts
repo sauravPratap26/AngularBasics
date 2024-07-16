@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms'; 
 import { WishListComponent } from './wish-list/wish-list.component';
+import { AddWishFormComponent } from "./add-wish-form/add-wish-form.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule,FormsModule, WishListComponent], // Add CommonModule to imports
+  imports: [RouterOutlet, CommonModule, FormsModule, WishListComponent, AddWishFormComponent], // Add CommonModule to imports
   templateUrl: './app.component.html',
   styleUrl: './app.component.css' // Correct property name to styleUrls
 })
@@ -32,12 +33,7 @@ export class AppComponent {
     }
   }
 
-  addNewWish(){
-    this.items.push(new WishItem(this.newWishText))
-    this.newWishText=''
-  }
 
-  newWishText=""
   ListFilter=0
 
 
