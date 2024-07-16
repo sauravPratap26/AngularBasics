@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WishItem } from '../shared/models/wishItems';
 
@@ -17,10 +17,12 @@ const filtersSelection=[
 })
 
 export class WishFilterComponent {
-  @Output() filter= new EventEmitter<any>();
+  //using the two way binding:
+  @Input() filter:any;
+  @Output() filterChange= new EventEmitter<any>();
 
   changeFilter(value:any){
-    this.filter.emit(filtersSelection[value]);
+    this.filterChange.emit(filtersSelection[value]);
   }
   ListFilter=0
 }

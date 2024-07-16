@@ -27,6 +27,7 @@ export class AppComponent {
 
   filterLogic: any = (item: WishItem) => item;
 
+  
   updateFilter(newFilter: (item: WishItem) => boolean) {
     this.filterLogic = newFilter;
   }
