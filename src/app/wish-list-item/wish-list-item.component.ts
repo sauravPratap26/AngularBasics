@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component,Input,Output,EventEmitter } from '@angular/core';
+import events from '../shared/services/EventService';
 @Component({
   selector: 'wish-list-item',
   standalone: true,
@@ -10,6 +11,7 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
 export class WishListItemComponent {
 
   @Input() wishText!:String;
+  @Input() wishId!:String;
   @Input() wishComplete!:boolean;
   @Output() wishCompleteChange= new EventEmitter<boolean>();
 
@@ -20,5 +22,9 @@ export class WishListItemComponent {
 
   get getCss(){
     return this.wishComplete?'strikeThrough':''
+  }
+
+  removeWish(){
+    events.emit('removeWish',this.wishId);
   }
 }

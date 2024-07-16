@@ -1,8 +1,11 @@
-<div [ngClass]="getCss">
-    <input
-    type="checkbox"
-    [checked]="wishComplete"
-    (click)="toggleItem()">
+<div style="display: flex; justify-content: space-between; width: 200px">
+  <div [ngClass]="getCss" style="padding: 5px">
+    <label>
 
-    {{ wishText }}
+        <input type="checkbox" [checked]="wishComplete" (click)="toggleItem()" />
+    
+        {{ wishText }}
+    </label>
+  </div>
+  <button type="button" (click)="removeWish()">Delete</button>
 </div>
