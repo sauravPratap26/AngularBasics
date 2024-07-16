@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component,Input,Output,EventEmitter } from '@angular/core';
-import events from '../shared/services/EventService';
+import {EventService} from '../shared/services/EventService';
 @Component({
   selector: 'wish-list-item',
   standalone: true,
@@ -15,6 +15,10 @@ export class WishListItemComponent {
   @Input() wishComplete!:boolean;
   @Output() wishCompleteChange= new EventEmitter<boolean>();
 
+  constructor(private events:EventService){
+
+  }
+
   toggleItem() {
     this.wishComplete = !this.wishComplete;
     this.wishCompleteChange.emit(this.wishComplete)
@@ -25,6 +29,6 @@ export class WishListItemComponent {
   }
 
   removeWish(){
-    events.emit('removeWish',this.wishId);
+    this.events.emit('removeWish',this.wishId);
   }
 }
