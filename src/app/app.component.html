@@ -1,29 +1,6 @@
 <!-- input component below -->
 <add-wish-form (addWish)="items.push($event)"></add-wish-form>
 
-<div >
-<select [(ngModel)]="ListFilter">
-    <option value="0">All</option>
-    <option value="1">Unfulfilled</option>
-    <option value="2">Fulfilled</option>
-</select>
-</div>
+<wish-filter (filter)="updateFilter($event)"></wish-filter>
 
-<wish-list [wishes]="visibleWishItem"></wish-list>
-<!-- <div *ngIf="visibleWishItem.length === 0; then noItems; else showItems"></div>
-
-<ng-template #noItems> There are no wishes to display ! </ng-template>
-
-<ng-template #showItems>
-  <div *ngFor="let item of visibleWishItem">
-    <div>
-        <input
-        type="checkbox"
-        [checked]="item.isCompleted"
-        (click)="toggleItem(item)">
-
-        {{ item.wishText }}
-    </div>
-  </div>
-  
-</ng-template> -->
+<wish-list [wishes]="items.filter(filterLogic)"></wish-list>
