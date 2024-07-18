@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   items!: WishItem[];
   title = 'wishlist';
 
-  filterLogic: any = (item: WishItem) => item;
+  filterLogic: (any) = (item: WishItem) => item;
 
   updateFilter(newFilter: (item: WishItem) => boolean) {
     this.filterLogic = newFilter;
