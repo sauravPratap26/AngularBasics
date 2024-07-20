@@ -1,5 +1,5 @@
-import { Component,Output, EventEmitter } from '@angular/core';
-import { WishItem } from '../shared/models/wishItems';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { WishItem } from '../../shared/models/wishItems';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,16 +7,15 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './add-wish-form.component.html',
-  styleUrl: './add-wish-form.component.css'
+  styleUrl: './add-wish-form.component.css',
 })
 export class AddWishFormComponent {
-
   @Output() addWish = new EventEmitter<WishItem>();
-  addNewWish(){
+  addNewWish() {
     // this.items.push(new WishItem(this.newWishText))
-    this.addWish.emit(new WishItem(this.newWishText))
-    this.newWishText=''
+    this.addWish.emit(new WishItem(this.newWishText));
+    this.newWishText = '';
   }
 
-  newWishText=""
+  newWishText = '';
 }

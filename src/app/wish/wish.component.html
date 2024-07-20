@@ -1,0 +1,10 @@
+<!-- input component below -->
+<add-wish-form (addWish)="items.push($event)"></add-wish-form>
+
+<!-- <wish-filter (filter)="updateFilter($event)"></wish-filter> -->
+ <!-- the above is one way binding -->
+
+ <!-- for two way binding: -->
+  <wish-filter [(filter)]="filterLogic"></wish-filter>
+
+<wish-list [wishes]="items.filter(filterLogic)"></wish-list>
