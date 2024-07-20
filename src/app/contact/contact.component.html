@@ -1,11 +1,13 @@
-<form>
+<form
+[formGroup]="contactForm"
+(ngSubmit)="$event.preventDefault(); submitForm()">
   <div>
     <label for="name">Name:</label>
     <input
       type="text"
       id="name"
       name="name"
-      [formControl]="senderNameControl"
+      formControlName="senderName"
       required=""
     />
   </div>
@@ -15,7 +17,7 @@
       type="email"
       id="email"
       name="email"
-      [formControl]="senderEmailControl"
+      formControlName="senderEmail"
       required
     />
   </div>
@@ -24,7 +26,7 @@
     <textarea
       id="message"
       name="message"
-      [formControl]="senderMessageControl"
+      formControlName="senderMessage"
       required
     ></textarea>
   </div>
