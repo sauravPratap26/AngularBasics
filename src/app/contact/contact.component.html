@@ -1,0 +1,33 @@
+<form>
+  <div>
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [formControl]="senderNameControl"
+      required=""
+    />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [formControl]="senderEmailControl"
+      required
+    />
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <textarea
+      id="message"
+      name="message"
+      [formControl]="senderMessageControl"
+      required
+    ></textarea>
+  </div>
+  <button type="submit"
+  (click)="$event.preventDefault(); submitForm()">Send Message</button>
+</form>
