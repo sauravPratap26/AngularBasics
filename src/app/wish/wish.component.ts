@@ -10,15 +10,17 @@ import { WishListItemComponent } from './wish-list-item/wish-list-item.component
 @Component({
   selector: 'app-wish',
   standalone: true,
-  imports: [WishListComponent,
+  imports: [
+    WishListComponent,
     AddWishFormComponent,
     WishFilterComponent,
-    WishListItemComponent,],
+    WishListItemComponent,
+  ],
   templateUrl: './wish.component.html',
-  styleUrl: './wish.component.css'
+  styleUrl: './wish.component.css',
 })
 export class WishComponent {
-  items: WishItem[]=[];
+  items: WishItem[] = [];
   title = 'wishlist';
 
   filterLogic: any = (item: WishItem) => item;
@@ -51,5 +53,4 @@ export class WishComponent {
   //   return this.items.filter(this.filter);
   // }
   //instead of using visibleWishItem, I am directly applying the logic in the app.component.html file
-
 }
