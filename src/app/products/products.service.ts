@@ -19,4 +19,8 @@ export class ProductsService {
   getAllProduct(){
     return of (this.data);
   }
+
+  getproduct(id:number){
+    return of(this.data.find(p=>p.id===id))
+  }
 }

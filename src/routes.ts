@@ -4,6 +4,7 @@ import { WishComponent } from './app/wish/wish.component';
 import { HomeComponent } from './app/home/home.component';
 import { NotFoundComponent } from './app/not-found/not-found.component';
 import { ProductslistComponent } from './app/products/productslist/productslist.component';
+import { ProductdetailsComponent } from './app/products/productdetails/productdetails.component';
 
 const routeConfig: Routes = [
   {
@@ -23,10 +24,17 @@ const routeConfig: Routes = [
     title:'Contact me !'
 
   },
+
   {
     path: 'products',
     component: ProductslistComponent,
     title:'Products'
+
+  },
+  {
+    path: 'products/:id',
+    component: ProductdetailsComponent,
+    title:'Details'
 
   },
   {
