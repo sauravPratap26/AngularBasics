@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { WishModule } from './wish/wish.module';
 import { ContactModule } from './contact/contact.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, WishModule, ContactModule],
+  imports: [WishModule, ContactModule, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+
+  constructor(private router: Router) {}
+
   ngOnInit(): void {}
 }
